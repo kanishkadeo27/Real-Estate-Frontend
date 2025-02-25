@@ -1,0 +1,49 @@
+.homepage {
+  display: flex;
+  height: 100%;
+
+  .textContainer {
+    flex: 3;
+
+    .wrapper {
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
+      height: 100%;
+      // align-items: center;
+
+      .title {
+        font-size: 64px;
+      }
+      .boxes {
+        display: flex;
+        justify-content: space-between;
+
+        .box {
+          h1 {
+            font-size: 36px;
+          }
+          h2 {
+            font-size: 20px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+  .imageContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 110%;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
