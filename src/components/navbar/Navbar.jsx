@@ -29,15 +29,15 @@ const Navbar = () => {
           <img src="/logo.png" alt="logo" />
           <span>KdEstate</span>
         </a>
-        <a href="/">Home</a>
-        <a href="/">About</a>
-        <a href="/">Contact</a>
-        <a href="/">Agents</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Agents</a>
       </div>
       <div className="right">
-        <a href="/">Signin</a>
+        <a href="#">Signin</a>
         <a
-          href="/"
+          href="#"
           className="register
         "
         >
@@ -51,12 +51,12 @@ const Navbar = () => {
           />
         </div>
         <div className={open ? "menu active" : "menu"}>
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
-          <a href="/">Agents</a>
-          <a href="/">Signin</a>
-          <a href="/">Signup</a>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Agents</a>
+          <a href="#">Signin</a>
+          <a href="#">Signup</a>
         </div>
       </div>
     </nav>
