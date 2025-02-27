@@ -4,6 +4,10 @@ import Home from "./pages/home/Home";
 import ListPage from "./pages/listPage/ListPage";
 import SinglePage from "./pages/singlePage/SinglePage";
 import Login from "./pages/login/Login";
+import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
+import Agents from "./pages/agents/Agents";
+import Register from "./pages/register/Register";
 
 function App() {
   const router = createBrowserRouter([
@@ -13,6 +17,10 @@ function App() {
       children: [
         { path: "/", element: <Home /> },
         { path: "/login", element: <Login /> },
+        { path: "/register", element: <Register /> },
+        { path: "/about", element: <About /> },
+        { path: "/contact", element: <Contact /> },
+        { path: "/agents", element: <Agents /> },
         { path: "/list", element: <ListPage /> },
         { path: "/list/:id", element: <SinglePage /> },
       ],

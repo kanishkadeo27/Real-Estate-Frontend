@@ -1,19 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.scss";
-import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   function handleHemBurgerClick() {
-    setOpen(!open);
-    console.log("clicked");
+    setOpen((prev) => !prev);
   }
 
   // Close menu when screen size increases
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 738) {
-        // Adjust breakpoint accordingly
         setOpen(false);
       }
     };
@@ -29,34 +28,104 @@ const Navbar = () => {
           <img src="/logo.png" alt="logo" />
           <span>KdEstate</span>
         </a>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Agents</a>
+
+        <ul className="navLinks">
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Contact
+            </NavLink>
+            <NavLink
+              to="/agents"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Agents
+            </NavLink>
+          </li>
+        </ul>
       </div>
       <div className="right">
-        <a href="#">Signin</a>
-        <a
-          href="#"
-          className="register
-        "
-        >
-          Signup
-        </a>
-        <div className="menuIcon">
-          <img
-            src="/menu.png "
-            alt="hemburger menu icon"
-            onClick={handleHemBurgerClick}
-          />
+        <ul className="navLinks">
+          <li>
+            <NavLink
+              to="/login"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              SignIn
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/register"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              SignUp
+            </NavLink>
+          </li>
+        </ul>
+
+        {/* Hamburger Icon */}
+        <div className="menuIcon" onClick={handleHemBurgerClick}>
+          <img src="/menu.png" alt="hamburger menu icon" />
         </div>
-        <div className={open ? "menu active" : "menu"}>
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-          <a href="#">Agents</a>
-          <a href="#">Signin</a>
-          <a href="#">Signup</a>
+
+        {/* Mobile Menu */}
+        <div className={`menu ${open ? "active" : ""}`}>
+          <ul className="navLinks">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                About
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Contact
+              </NavLink>
+              <NavLink
+                to="/agents"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Agents
+              </NavLink>
+              <NavLink
+                to="/login"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                SignIn
+              </NavLink>
+              <NavLink
+                to="/register"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                SignUp
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
