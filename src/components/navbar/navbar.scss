@@ -83,6 +83,54 @@ nav {
       background-color: transparent;
     }
 
+    .userDiv {
+      display: flex;
+      font-weight: bold;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      .username {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+        span {
+          @include sm {
+            display: none;
+          }
+        }
+      }
+      .profile {
+        position: relative;
+        @include sm {
+          display: none;
+        }
+        .profileLink {
+          margin-right: 20px;
+          background-color: #fece51;
+          padding: 10px;
+          border-radius: 5px;
+        }
+        .notification {
+          padding: 3px;
+          text-align: center;
+          font-size: 12px;
+          background-color: red;
+          border-radius: 50%;
+          position: absolute;
+          top: -10px;
+          color: white;
+          right: 45px;
+        }
+      }
+    }
+
     .navLinks {
       list-style: none;
       display: flex;

@@ -8,6 +8,7 @@ import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Agents from "./pages/agents/Agents";
 import Register from "./pages/register/Register";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,7 @@ function App() {
         { path: "/agents", element: <Agents /> },
         { path: "/list", element: <ListPage /> },
         { path: "/list/:id", element: <SinglePage /> },
+        { path: "/profile", element: <Profile /> },
       ],
     },
   ]);

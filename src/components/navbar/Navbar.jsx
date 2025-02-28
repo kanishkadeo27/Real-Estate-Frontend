@@ -5,6 +5,8 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
+  const user = true; //auth
+
   function handleHemBurgerClick() {
     setOpen((prev) => !prev);
   }
@@ -59,25 +61,40 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="right">
-        <ul className="navLinks">
-          <li>
-            <NavLink
-              to="/login"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              SignIn
-            </NavLink>
-          </li>
+        {user ? (
+          <div className="userDiv">
+            <div className="username">
+              <img src="/public/favicon.png" alt="" />
+              <span>John Doe</span>
+            </div>
+            <div className="profile">
+              <NavLink className="profileLink" to="/profile">
+                Profile
+              </NavLink>
+              <span className="notification">+3</span>
+            </div>
+          </div>
+        ) : (
+          <ul className="navLinks">
+            <li>
+              <NavLink
+                to="/login"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                SignIn
+              </NavLink>
+            </li>
 
-          <li>
-            <NavLink
-              to="/register"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              SignUp
-            </NavLink>
-          </li>
-        </ul>
+            <li>
+              <NavLink
+                to="/register"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                SignUp
+              </NavLink>
+            </li>
+          </ul>
+        )}
 
         {/* Hamburger Icon */}
         <div className="menuIcon" onClick={handleHemBurgerClick}>
