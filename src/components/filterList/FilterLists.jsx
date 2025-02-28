@@ -30,7 +30,7 @@ const FilterLists = () => {
       <h1>
         Search Results for <b>London</b>
       </h1>
-      <div className="top">
+      <div className="topDiv">
         <div className="item">
           <label htmlFor="location">Location</label>
           <input
@@ -44,7 +44,7 @@ const FilterLists = () => {
         </div>
       </div>
 
-      <div className="bottom">
+      <div className="bottomDiv">
         <div className="item">
           <label htmlFor="type">Type</label>
           <select name="type" id="type" value={type}>

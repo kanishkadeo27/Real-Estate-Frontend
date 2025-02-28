@@ -27,7 +27,7 @@
 
       .info {
         margin-top: 20px;
-        .top {
+        .topContainer {
           display: flex;
           justify-content: space-between;
           .post {
@@ -76,7 +76,7 @@
             }
           }
         }
-        .bottom {
+        .bottomContainer {
           margin-top: 50px;
           color: #555;
           line-height: 20px;

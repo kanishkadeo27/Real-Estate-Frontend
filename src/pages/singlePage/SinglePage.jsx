@@ -10,7 +10,7 @@ const SinglePage = () => {
         <div className="wrapper">
           <Slider images={singlePostData.images} />
           <div className="info">
-            <div className="top">
+            <div className="topContainer">
               <div className="post">
                 <h1>{singlePostData.title}</h1>
                 <div className="address">
@@ -24,7 +24,7 @@ const SinglePage = () => {
                 <span>{userData.name}</span>
               </div>
             </div>
-            <div className="bottom">{singlePostData.description}</div>
+            <div className="bottomContainer">{singlePostData.description}</div>
           </div>
         </div>
       </div>

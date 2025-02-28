@@ -1,0 +1,63 @@
+@import "../../responsive.scss";
+.agent-card {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  @include md {
+    flex-direction: column;
+  }
+  h3 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    text-align: justify;
+  }
+  .imgDiv {
+    flex: 1;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+  }
+  .infoDiv {
+    padding: 5px 10px;
+    flex: 4;
+    display: flex;
+    gap: 30px;
+
+    @include md {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .left {
+      flex: 1;
+    }
+    .right {
+      flex: 2;
+
+      p {
+        @include sm {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .contact-info {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #007bff;
+  }
+}

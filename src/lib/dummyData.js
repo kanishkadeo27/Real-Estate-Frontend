@@ -162,3 +162,100 @@ export const userData = {
   name: "John Doe",
   img: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
 };
+
+export const agentsData = [
+  {
+    id: 1,
+    name: "John Doe",
+    position: "Senior Realtor",
+    experience: "10+ Years",
+    email: "john.doe@example.com",
+    phone: "+1 123 456 7890",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    position: "Luxury Property Specialist",
+    experience: "8+ Years",
+    email: "jane.smith@example.com",
+    phone: "+1 987 654 3210",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+  },
+  {
+    id: 3,
+    name: "Robert Johnson",
+    position: "Commercial Property Expert",
+    experience: "12+ Years",
+    email: "robert.john@example.com",
+    phone: "+1 456 789 1230",
+    image: "https://randomuser.me/api/portraits/men/50.jpg",
+  },
+  {
+    id: 4,
+    name: "John Doe",
+    position: "Senior Realtor",
+    experience: "10+ Years",
+    email: "john.doe@example.com",
+    phone: "+1 123 456 7890",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
+  },
+  {
+    id: 5,
+    name: "Jane Smith",
+    position: "Luxury Property Specialist",
+    experience: "8+ Years",
+    email: "jane.smith@example.com",
+    phone: "+1 987 654 3210",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+  },
+  {
+    id: 6,
+    name: "Robert Johnson",
+    position: "Commercial Property Expert",
+    experience: "12+ Years",
+    email: "robert.john@example.com",
+    phone: "+1 456 789 1230",
+    image: "https://randomuser.me/api/portraits/men/50.jpg",
+  },
+];
+export const testimonials = [
+  {
+    id: 1,
+    name: "Emily Williams",
+    feedback:
+      "The agents were incredibly helpful and made the buying process smooth!",
+    image: "https://randomuser.me/api/portraits/women/46.jpg",
+  },
+  {
+    id: 2,
+    name: "Michael Brown",
+    feedback: "I found my dream home thanks to their amazing service!",
+    image: "https://randomuser.me/api/portraits/men/47.jpg",
+  },
+  {
+    id: 3,
+    name: "Sophia Martinez",
+    feedback: "The best real estate agency! Highly professional and friendly.",
+    image: "https://randomuser.me/api/portraits/women/48.jpg",
+  },
+  {
+    id: 4,
+    name: "Emily Williams",
+    feedback:
+      "The agents were incredibly helpful and made the buying process smooth!",
+    image: "https://randomuser.me/api/portraits/women/46.jpg",
+  },
+  {
+    id: 5,
+    name: "Michael Brown",
+    feedback: "I found my dream home thanks to their amazing service!",
+    image: "https://randomuser.me/api/portraits/men/47.jpg",
+  },
+  {
+    id: 6,
+    name: "Sophia Martinez",
+    feedback: "The best real estate agency! Highly professional and friendly.",
+    image: "https://randomuser.me/api/portraits/women/48.jpg",
+  },
+];

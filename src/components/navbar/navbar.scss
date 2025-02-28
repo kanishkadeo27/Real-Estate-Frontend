@@ -127,6 +127,10 @@ nav {
           top: -10px;
           color: white;
           right: 45px;
+          @include md {
+            top: 0;
+            right: 15px;
+          }
         }
       }
     }

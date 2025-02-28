@@ -1,8 +1,6 @@
 @import "../../responsive.scss";
 .about-page {
   display: flex;
-  // justify-content: center;
-  // align-items: center;
   height: 100%;
 
   @include md {
@@ -57,7 +55,7 @@
       }
 
       strong {
-        color: #007bff;
+        color: #fece51;
       }
       .explore {
         align-self: center;
@@ -68,6 +66,7 @@
           padding: 15px 20px;
           color: white;
           border: none;
+          cursor: pointer;
 
           @include md {
             padding: 10px;
