@@ -1,11 +1,26 @@
 import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 import { NavLink } from "react-router-dom";
+import apiRequest from "../../lib/apiRequest.js";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  const user = true; //auth
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const handleLogout = async () => {
+    try {
+      const res = await apiRequest.post("/auth/logout");
+      localStorage.removeItem("user");
+      navigate("/");
+    } catch (err) {
+      setError(err.response.data.message);
+      console.log(err);
+    }
+  };
+
+  const userInfo = JSON.parse(localStorage.getItem("user"));
 
   function handleHemBurgerClick() {
     setOpen((prev) => !prev);
@@ -61,11 +76,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="right">
-        {user ? (
+        {userInfo ? (
           <div className="userDiv">
             <div className="username">
-              <img src="/public/favicon.png" alt="" />
-              <span>John Doe</span>
+              {/* <img src="/public/favicon.png" alt="" /> */}
+              <img src={userInfo.avatar} alt="null" />
+              <span>{userInfo.username}</span>
             </div>
             <div className="profile">
               <NavLink className="profileLink" to="/profile">
@@ -129,18 +145,37 @@ const Navbar = () => {
               >
                 Agents
               </NavLink>
-              <NavLink
-                to="/login"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                SignIn
-              </NavLink>
-              <NavLink
-                to="/register"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                SignUp
-              </NavLink>
+              {userInfo ? (
+                <>
+                  <NavLink
+                    to="/profile"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    Profile
+                  </NavLink>
+                  <NavLink
+                    onClick={handleLogout}
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    Logout
+                  </NavLink>
+                </>
+              ) : (
+                <>
+                  <NavLink
+                    to="/login"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    SignIn
+                  </NavLink>
+                  <NavLink
+                    to="/register"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    SignUp
+                  </NavLink>
+                </>
+              )}
             </li>
           </ul>
         </div>

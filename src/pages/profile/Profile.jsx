@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 const Profile = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const userInfo = JSON.parse(localStorage.getItem("user"));
+
   const handleLogout = async () => {
     try {
       const res = await apiRequest.post("/auth/logout");
@@ -17,6 +19,7 @@ const Profile = () => {
       console.log(err);
     }
   };
+  console.log(userInfo);
   return (
     <div className="profile">
       <div className="userDetails">
@@ -28,13 +31,13 @@ const Profile = () => {
           <div className="infoContainer">
             <span>
               Avatar:
-              <img src="/public/favicon.png" alt="" />
+              <img src={userInfo.avatar} alt="" />
             </span>
             <span>
-              Username:<b>John Doe</b>
+              Username:<b>{userInfo.username}</b>
             </span>
             <span>
-              Email:<b>johndoe@gmail.com</b>
+              Email:<b>{userInfo.email}</b>
             </span>
             <button className="logoutBtn" onClick={handleLogout}>
               Logout
