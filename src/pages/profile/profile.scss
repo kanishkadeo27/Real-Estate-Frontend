@@ -49,6 +49,20 @@
           align-items: center;
           gap: 15px;
         }
+        .logoutBtn {
+          width: fit-content;
+          background-color: rgb(250, 45, 45);
+          color: white;
+          padding: 12px 24px;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+        .error {
+          color: red;
+          font-size: 12px;
+          width: 70%;
+        }
         img {
           width: 40px;
           height: 40px;
